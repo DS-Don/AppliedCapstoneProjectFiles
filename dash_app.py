@@ -62,7 +62,7 @@ def pie_chart(valueFromDropdown):
         return [dcc.Graph(figure=fig)]
     else:
         new_df = spacex_df[spacex_df['Launch Site'] == valueFromDropdown]
-        fig = px.pie(new_df, names = 'class', title = f'Total Successful Launches For Site {valueFromDropdown}')
+        fig = px.pie(new_df, names = 'class', title = f'Successful vs Unsuccessful Launches For Site {valueFromDropdown}')
         return [dcc.Graph(figure  = fig)]
 
 @app.callback(  [Output(component_id='another-graph', component_property='children')],
